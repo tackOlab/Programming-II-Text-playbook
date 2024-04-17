@@ -1,6 +1,3 @@
 # Node.js, npm
 node_modules/
 npm-debug.log
-
-# Antora
-#build/

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: プログラミング基礎及び演習I</title>
+    <meta name="generator" content="Antora 3.1.7">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">プログラミング基礎及び演習I</a>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="Programming-II" data-version="v1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">Programming-II</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">スケジュール等</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="chapter01.html">復習</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="chapter02.html">文字と文字列</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="chapter03.html">配列</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="chapter03-01.html">1次元配列</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="chapter03.html#_多次元配列">多次元配列</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="chapter04.html">関数とマクロ</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="chapter05.html">ポインタ</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Programming-II</span>
+    <span class="version">v1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="index.html">Programming-II</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="index.html">v1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+<div class="edit-this-page"><a href="https://github.com/tackOlab/Programming-II-Text/edit/main/modules/ROOT/pages/chapter03-02.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="sect2">
+<h3 id="_多次元配列"><a class="anchor" href="#_多次元配列"></a>多次元配列</h3>
+<div class="paragraph">
+<p>配列の添字は，多次元に拡張することができる．これによって，例えば2次元データなどに，<code>x</code>, <code>y</code>などといった座標を添字として用いてアクセスすることが可能となる．多次元に拡張されるのは添字のみであり，データそのものが確保されるメモリ上では常に1次元のアドレスが割り当てられることに注意．</p>
+</div>
+<div class="paragraph">
+<p>2次元配列の例を<a href="#2darray">リスト 1</a>に示す．</p>
+</div>
+<div id="2darray" class="exampleblock">
+<div class="title">リスト 1. 2次元配列の使用例</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-c hljs" data-lang="c">int data[2][3];  // 2行3列の2次元配列を宣言，添字の有効範囲はdata[0-1][0-2]
+int rows = 2;    // 行数（縦の要素数）
+int cols = 3;    // 列数 (横の要素数)
+int i, j;
+
+// 初期化
+for (i = 0; i &lt; rows; ++i) {
+  for (j = 0; j &lt; cols; ++j) {
+    data[i][j] = 0;
+  }
+}
+// 各行の先頭アドレスを表示
+for (i = 0; i &lt; rows; ++i) {
+  printf("%x\n", &amp;data[i][0]);
+}
+// 各行の先頭アドレスを表示(省略形)
+for (i = 0; i &lt; rows; ++i) {
+  printf("%x\n", data[i]);
+}
+// (x,y) = (2,1)の要素に値を代入
+data[1][2] = 100;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>2次元配列においても，宣言と同時に初期化を行うことが可能である．</p>
+</div>
+<div id="03:src_init_array4" class="exampleblock">
+<div class="title">リスト 2. 2次元配列を宣言と同時に初期化する方法</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-c hljs" data-lang="c">int score[3][5] = {
+    {70, 80, 50, 99, 60},
+    {60, 45, 70, 88, 30},
+    {90, 85, 70, 57, 85}
+};</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="#03:src_init_array4">リスト 2</a>で初期化された2次元配列を図示したものが<a href="#fig:03_2d_array">図 1</a>である．図の上段は，各要素に対する2次元の添字を示したものである．同じ色の添字は同じ色の次元に対応する．また，図の下段は，この2次元配列のメモリ上に占める領域の概念図である．各行の先頭アドレスの書き方およびその省略形が示されている．</p>
+</div>
+<div id="fig:03_2d_array" class="imageblock text-center">
+<div class="content">
+<img src="_images/03_2d_array.png" alt="03 2d array">
+</div>
+<div class="title">図 1. 2次元配列score</div>
+</div>
+<div class="paragraph">
+<p>次のリストは，この2次元配列<code>score</code>の行ごとの要素の合計値を求めるプログラムの例である．</p>
+</div>
+<div id="03:src_sum_row" class="exampleblock">
+<div class="title">リスト 3. 2次元配列の行ごとの要素の合計値を求める例</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-c hljs" data-lang="c">// 配列score[3][5]は定義されていると仮定
+int i, j;
+int row_sum[3];  // 行ごとの合計値を格納するための配列
+
+// 初期化
+for (i = 0; i &lt; 3; ++i) {
+  sum[i] = 0;
+}
+
+for (i = 0; i &lt; 3; ++i) {
+  for (j = 0; j &lt; 5; ++j) {
+    sum[i] += score[i][j];
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">変数の有効範囲（スコープ）</div>
+<div class="paragraph">
+<p>C言語では，一部の例外を除いて，変数には有効範囲が存在する．有効範囲を超えて変数に値を代入したり，その値を参照したりすることはできない．具体的には，</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>変数宣言の直後から，その変数宣言が含まれる<code>{</code>に対応する<code>}</code>の直前まで</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>が，有効範囲となる．変数名を用いて値を代入・参照できるのは有効範囲内に限られる．処理が有効範囲を超えると，それらの変数に使われていたメモリ領域は解放され，名前は消去される．</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>このように管理される変数を <strong>自動変数(auto変数)</strong>と呼ぶ．自動変数はメモリ上の <strong>スタック</strong>と呼ばれる領域に確保される．</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>以下の<a href="#03:src_var_scope">リスト 4</a>において，8行目の変数<code>a1</code>への代入は有効範囲を超えているためコンパイルエラーとなる．</p>
+</div>
+<div id="03:src_var_scope" class="exampleblock">
+<div class="title">リスト 4. 変数の有効範囲の確認</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-c hljs" data-lang="c">int main() {
+  int a0 = 5;
+  {
+    int a1 = 10;
+    printf("a0 = %d, a1 = %d\n", a0, a1);
+  }
+  a0 = 0;
+  a1 = -1;  // 範囲外のためコンパイルエラーとなる
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">グローバル変数</div>
+<div class="paragraph">
+<p>有効範囲を超えてアクセスしたい変数を用意する必要がある場合，それらを <strong>グローバル変数</strong>として宣言する．グローバル変数の宣言は，<code>main</code>関数が始まる前までに変数宣言を行う．<a href="#03:src_var_global">リスト 5</a>にグローバル変数の使用例を示す．</p>
+</div>
+<div id="03:src_var_global" class="exampleblock">
+<div class="title">リスト 5. グローバル変数</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-c hljs" data-lang="c">int g_a1 = 0;  // グローバル変数
+int main() {
+  int a0 = 5;
+  printf("a0 = %d, g_a1 = %d\n", a0, g_a1);
+  a0 = 0;
+  g_a1 = -1;
+  printf("a0 = %d, g_a1 = %d\n", a0, g_a1);
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="#03:src_var_global">リスト 5</a>の実行結果は以下のとおりである．</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-c hljs" data-lang="c">a0 = 5, g_a1 = 0
+a0 = 0, g_a1 = -1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>自動変数とグローバル変数で，同じ名前を使用した場合，自動変数が優先される．ただし，非常に読みにくいソースコードとなるため，一般にはグローバル変数には，ひと目でそれとわかる名前を使用することが推奨される．</p>
+</div>
+<div id="03:src_var_auto_global" class="exampleblock">
+<div class="title">リスト 6. 変数の優先順位の確認</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-c hljs" data-lang="c">int a = 0;
+int main() {
+  int a = 100;
+  printf("a = %d\n", a);  // a = 0と表示される
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">変数のサイズ</div>
+<div class="paragraph">
+<p>各データ型の値1つをメモリに確保するのに必要なデータ量をその変数のサイズという．<a href="#03:tab_size_of">表 1</a>に，Windows 64bitマシンでの各データ型のサイズを示す．配列として宣言する場合には，これらのサイズに要素数が乗算されることに注意．例えば,100個の要素を持つ<code>int</code>型，の配列は 4×100 = 400 Byteのサイズとなる．</p>
+</div>
+<table id="03:tab_size_of" class="tableblock frame-all grid-all center" style="width: 50%;">
+<caption class="title">表 1. データ型とサイズ</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">データ型</th>
+<th class="tableblock halign-center valign-middle">サイズ(Byte)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><code>char</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><code>int</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><code>float</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><code>double</code></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">8</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>異なるOS等におけるデータ型のサイズを知るには，<code>sizeof</code>演算子を用いる．例えば<code>double</code>型のサイズを得るには，<code>sizeof(double)</code>のように記述する．</p>
+</div>
+<div class="paragraph">
+<p>自動変数として宣言される配列の要素数が非常に大きな値となる場合には注意が必要である．スタック領域の大きさは，一般にそれほど大きくはないため，GBクラスのサイズの配列はそスタック領域に収まらないことがある．この場合，<code>stack overflow</code>というエラーになる可能性がある．そのため，巨大な記憶領域が必要な場合には，スタック領域ではなく，ヒープ領域を用いることが普通である</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>本講義の範囲を超えるため，興味のある学生は教員へ質問してください．</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

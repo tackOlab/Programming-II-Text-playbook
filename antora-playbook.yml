@@ -1,0 +1,28 @@
+site:
+  title: プログラミング基礎及び演習II
+  start_page: Programming-II::index.adoc
+content:
+  sources:
+    - url: https://github.com/tackOlab/Programming-II-Text.git
+      branches: HEAD
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  supplemental_files: ./supplemental-ui
+asciidoc:
+  attributes:
+    experimental:
+    page-toc-levels: 4
+    doctype: book
+    sectnums:
+    sectnumlevels: 4
+    sectlinks:
+    example-caption: リスト
+    table-caption: 表
+    figure-caption: 図
+    xrefstyle: short
+    stem: '@'
+    kroki-fetch-diagram: true
+  extensions:
+    - asciidoctor-kroki

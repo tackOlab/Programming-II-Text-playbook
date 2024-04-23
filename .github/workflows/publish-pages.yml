@@ -1,8 +1,7 @@
 name: Publish to GitHub Pages
 on:
   repository_dispatch:
-    types: 
-      - repository-a-updated # repository_dispatch送出時のevent_typeの名前と揃える
+    types: [on-demand-test]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 concurrency:

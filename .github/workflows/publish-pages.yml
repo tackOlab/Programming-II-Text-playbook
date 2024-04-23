@@ -30,7 +30,9 @@ jobs:
     - name: Install Antora
       run: npm i antora
     - name: Generate Site
-      run: npx antora antora-playbook.yml
+      run: |
+        npx antora generate --fetch antora-playbook.yml --attribute experimental
+        cp -f build/site/_/css/'site copy.css' build/site/_/css/site.css
     - name: Upload Artifacts
       uses: actions/upload-pages-artifact@v2
       with:
